@@ -31,6 +31,8 @@ const upload = multer({
 /* app */
 const app = express();
 
+app.enable('trust proxy');
+
 // app.use((req, res, next) => {
 //   res.set('Access-Control-Allow-Origin', '*');
 //   if (req.method === 'OPTIONS') return res.sendStatus(200);

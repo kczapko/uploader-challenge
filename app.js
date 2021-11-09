@@ -40,7 +40,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(upload.single('image'));
 app.use((req, res, next) => {
-  if (!req.file) return next('No file provided or wrong file type');
+  if (!req.file) return next(new Error('No file provided or wrong file type'));
 
   res.status(201).json({
     status: 'success',

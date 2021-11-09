@@ -42,8 +42,6 @@ app.use(upload.single('image'));
 app.use((req, res, next) => {
   if (!req.file) return next('No file provided or wrong file type');
 
-  console.log(req.file);
-
   res.status(201).json({
     status: 'success',
     filepath: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
